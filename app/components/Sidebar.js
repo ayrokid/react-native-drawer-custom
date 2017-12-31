@@ -25,6 +25,7 @@ import {
   Footer,
 } from 'native-base';
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class Sidebar extends Component {
   static navigationOptions = ({navigation}) => ({
@@ -36,7 +37,7 @@ export default class Sidebar extends Component {
     return (
       <Container>
         <Content>
-          <View style={{
+          <View colors={['#4c669f', '#3b5998', '#192f6a']} style={{
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
@@ -54,6 +55,7 @@ export default class Sidebar extends Component {
           style={{ marginTop: 20 }}
           >Yanun</Text>
           </View>
+          
           <Separator bordered>
             <Text>Menu</Text>
           </Separator>
