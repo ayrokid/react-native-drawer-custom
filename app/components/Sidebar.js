@@ -51,20 +51,28 @@ export default class Sidebar extends Component {
           source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'}}
           style={{ borderColor: 'red'}}
           />
-          <Text
-          style={{ marginTop: 20 }}
-          >Yanun</Text>
+            <Text
+            style={{ marginTop: 20 }}
+            >Yanun</Text>
+            <Text>
+            Rp. 150.000
+            </Text>  
           </View>
           
-          <Separator bordered>
-            <Text>Menu</Text>
-          </Separator>
-          <ListItem icon style={styles.paddingList}>
+          <ListItem icon style={styles.paddingList} onPress={() => navigate('Home') }>
             <Left>
               <Icon name="home" size={30} />
             </Left>
             <Body>
               <Text>Home</Text>
+            </Body>
+          </ListItem>
+          <ListItem icon style={styles.paddingList} >
+            <Left>
+              <Icon name="info" size={30} />
+            </Left>
+            <Body>
+              <Text>About</Text>
             </Body>
           </ListItem>
           <ListItem icon style={styles.paddingList} onPress={() => navigate('Profile') }>
@@ -80,7 +88,23 @@ export default class Sidebar extends Component {
               <Icon name="settings" size={30} />
             </Left>
             <Body>
-              <Text>Settings</Text>
+              <Text>Ubah Passwod</Text>
+            </Body>
+          </ListItem>
+          <ListItem icon style={styles.paddingList} >
+            <Left>
+              <Icon name="settings" size={30} />
+            </Left>
+            <Body>
+              <Text>Ubah PIN</Text>
+            </Body>
+          </ListItem>
+          <ListItem icon style={styles.paddingList} >
+            <Left>
+              <Icon name="settings" size={30} />
+            </Left>
+            <Body>
+              <Text>History Transaksi</Text>
             </Body>
           </ListItem>
           <ListItem icon style={styles.paddingList} >

@@ -17,16 +17,18 @@ import Sidebar from './app/components/Sidebar'
 import HomeScreen from './app/screens/HomeScreen'
 import ProfileScreen from './app/screens/ProfileScreen'
 import LoginScreen from './app/screens/LoginScreen'
+import TopUpScreen from './app/screens/TopUpScreen'
 
 const AppDrawer = DrawerNavigator(
   {
     Home: {screen: HomeScreen },
     Profile: {screen: ProfileScreen },
     Login: {screen: LoginScreen },
+    TopUp: {screen: TopUpScreen },
   },
   {
     contentComponent: props => <Sidebar {...props} />,
-    initialRouteName: 'Login',
+    initialRouteName: 'Home',
     drawerPosition: 'left',
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
