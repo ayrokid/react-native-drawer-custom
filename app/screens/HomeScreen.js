@@ -4,43 +4,45 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
-  StyleSheet,
+  StyleSheet
 } from 'react-native'
-import { 
-  Container, 
-  Header, 
-  Title, 
-  Content, 
-  Footer, 
-  FooterTab, 
-  Button, 
-  Left, 
-  Right, 
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Footer,
+  FooterTab,
+  Button,
+  Left,
+  Right,
   Body,
   Text,
-  Card, CardItem,
-} from 'native-base';
+  Card,
+  CardItem
+} from 'native-base'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-
+import Ion from 'react-native-vector-icons/Ionicons'
 export default class HomeScreen extends Component {
-  render() {
-    const { navigate } = this.props.navigation;
+  render () {
+    const { navigate } = this.props.navigation
     return (
       <Container>
-        <Header>
+        <Header style={styles.header}>
           <Left>
             <Button transparent onPress={() => navigate('DrawerToggle')}>
-              <Icon name='menu' size={35} color="#fff" />
+              <Ion name='ios-menu' size={35} color="#000" />
             </Button>
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>Home</Title>
           </Body>
           <Right>
             <Button transparent onPress={() => navigate('TopUp')}>
-              <Icon name='add-box' size={35} color="#fff" />
+              <Ion name='ios-add-circle' size={35} color="#000" />
+              <Text  color="#fff">Top Up</Text>
             </Button>
           </Right>
         </Header>
@@ -54,15 +56,15 @@ export default class HomeScreen extends Component {
           <Card>
             <CardItem button onPress={() => navigate('Profile') } >
               <Icon active name="flash-on" style={styles.icon} />
-              <Text style={styles.paddingText}>Bayar Tagihan</Text>
+              <Text style={styles.paddingText}>Token Listrik</Text>
             </CardItem>
           </Card>
-          <Card>
+          {/* <Card>
             <CardItem button onPress={() => navigate('Profile') } >
               <Icon active name="videogame-asset" style={styles.icon} />
               <Text style={styles.paddingText}>Voucher Game</Text>
             </CardItem>
-          </Card>
+          </Card> */}
           <Card>
             <CardItem button onPress={() => navigate('Profile') } >
               <Icon active name="network-wifi" style={styles.icon} />
@@ -96,7 +98,7 @@ export default class HomeScreen extends Component {
           </FooterTab>
         </Footer> */}
       </Container>
-    );
+    )
   }
 }
 
@@ -105,7 +107,10 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   paddingText: {
-    paddingLeft: 10,
-    fontSize: 18
+    paddingLeft: 15,
+    fontSize: 20
   },
-});
+  header: {
+    backgroundColor: '#ffffff',
+  }
+})

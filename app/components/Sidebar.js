@@ -83,7 +83,7 @@ export default class Sidebar extends Component {
               <Text>Profile</Text>
             </Body>
           </ListItem>
-          <ListItem icon style={styles.paddingList} >
+          {/* <ListItem icon style={styles.paddingList} >
             <Left>
               <Icon name="settings" size={30} />
             </Left>
@@ -98,7 +98,7 @@ export default class Sidebar extends Component {
             <Body>
               <Text>Ubah PIN</Text>
             </Body>
-          </ListItem>
+          </ListItem> */}
           <ListItem icon style={styles.paddingList} >
             <Left>
               <Icon name="settings" size={30} />

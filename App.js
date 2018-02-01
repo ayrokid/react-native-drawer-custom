@@ -4,13 +4,13 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   Platform,
   StyleSheet,
   Text,
   View
-} from 'react-native';
+} from 'react-native'
 import { DrawerNavigator } from 'react-navigation'
 
 import Sidebar from './app/components/Sidebar'
@@ -21,10 +21,10 @@ import TopUpScreen from './app/screens/TopUpScreen'
 
 const AppDrawer = DrawerNavigator(
   {
-    Home: {screen: HomeScreen },
-    Profile: {screen: ProfileScreen },
-    Login: {screen: LoginScreen },
-    TopUp: {screen: TopUpScreen },
+    Home: { screen: HomeScreen },
+    Profile: { screen: ProfileScreen },
+    Login: { screen: LoginScreen },
+    TopUp: { screen: TopUpScreen }
   },
   {
     contentComponent: props => <Sidebar {...props} />,
@@ -32,8 +32,8 @@ const AppDrawer = DrawerNavigator(
     drawerPosition: 'left',
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
-    drawerToggleRoute: 'DrawerToggle',
+    drawerToggleRoute: 'DrawerToggle'
   }
-);
+)
 
-export default AppDrawer;
+export default AppDrawer

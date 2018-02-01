@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     View,
+    Alert
   } from 'react-native'
 import { 
   Container, 
@@ -24,6 +25,49 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 export default class LoginScreen extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      UserEmail: '',
+      UserPassword: ''
+    }
+  }
+
+  UserLoginFunction = () =>{
+    const { UserEmail }  = this.state ;
+    const { UserPassword }  = this.state ;
+    this.props.navigation.navigate('Home')
+    // Alert.alert(UserEmail);
+    /*
+    fetch('https://reactnativecode.000webhostapp.com/user_registration.php', {
+     method: 'POST',
+     headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json',
+     },
+     body: JSON.stringify({
+        
+       email: UserEmail,
+    
+       password: UserPassword
+    
+     })
+    
+   }).then((response) => response.json())
+         .then((responseJson) => {
+    
+   // Showing response message coming from server after inserting records.
+           Alert.alert(responseJson);
+           this.props.navigation.navigate('Home')
+    
+         }).catch((error) => {
+           console.error(error);
+         });
+    */
+    
+  }
+
   render() {
     return (
       <Container>
@@ -49,13 +93,18 @@ export default class LoginScreen extends Component {
           <Form>
             <Item stackedLabel>
               <Label>Username</Label>
-              <Input />
+              <Input
+              onChangeText={UserEmail => this.setState({UserEmail})}
+              />
             </Item>
             <Item stackedLabel last>
               <Label>Password</Label>
-              <Input type="password" />
+              <Input 
+              type="password"
+              onChangeText={UserPassword => this.setState({UserPassword})}
+               />
             </Item>
-            <Button full info style={{ marginTop: 30 }} onPress={() => this.props.navigation.navigate('Home')} >
+            <Button full info style={{ marginTop: 30 }} onPress={ this.UserLoginFunction } >
               <Text>Login</Text>
             </Button>
           </Form>
